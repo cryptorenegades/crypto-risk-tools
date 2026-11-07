@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cryptorenegades.github.io/crypto-risk-tools/sitemap.xml

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Reward Ratio Calculator with Break-Even Win Rate</title>
+<meta name="description" content="Risk reward ratio calculator for crypto trades. Enter entry, stop and target to get the R:R ratio and the break-even win rate it implies, plus a table.">
+<link rel="canonical" href="https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Crypto Renegades">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Crypto Risk Tools by Crypto Renegades">
+<meta property="og:title" content="Risk Reward Ratio Calculator with Break-Even Win Rate">
+<meta property="og:description" content="Risk reward ratio calculator for crypto trades. Enter entry, stop and target to get the R:R ratio and the break-even win rate it implies, plus a table.">
+<meta property="og:url" content="https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html">
+<meta property="og:image" content="https://cryptorenegades.github.io/crypto-risk-tools/assets/img/og-risk-reward.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Risk Reward Ratio Calculator">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Risk Reward Ratio Calculator with Break-Even Win Rate">
+<meta name="twitter:description" content="Risk reward ratio calculator for crypto trades. Enter entry, stop and target to get the R:R ratio and the break-even win rate it implies, plus a table.">
+<meta name="twitter:image" content="https://cryptorenegades.github.io/crypto-risk-tools/assets/img/og-risk-reward.png">
+<meta name="theme-color" content="#f5f7f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090e09" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "EducationalOrganization",
+   "@id": "https://www.cryptorenegades.co/#organization",
+   "name": "Crypto Renegades",
+   "legalName": "Crypto Renegades LLC",
+   "url": "https://www.cryptorenegades.co/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.cryptorenegades.co/brand/icon-512.png",
+    "width": 512,
+    "height": 512
+   },
+   "founder": [
+    {
+     "@type": "Person",
+     "@id": "https://www.cryptorenegades.co/founders/chad-wittfeldt/#person",
+     "name": "Chad Wittfeldt"
+    },
+    {
+     "@type": "Person",
+     "@id": "https://www.cryptorenegades.co/founders/niko-mercuris/#person",
+     "name": "Niko Mercuris"
+    }
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#website",
+   "name": "Crypto Risk Tools",
+   "url": "https://cryptorenegades.github.io/crypto-risk-tools/",
+   "inLanguage": "en-US",
+   "publisher": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html#webpage",
+   "url": "https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html",
+   "name": "Risk Reward Ratio Calculator with Break-Even Win Rate",
+   "description": "Risk reward ratio calculator for crypto trades. Enter entry, stop and target to get the R:R ratio and the break-even win rate it implies, plus a table.",
+   "isPartOf": {
+    "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#website"
+   },
+   "publisher": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   },
+   "inLanguage": "en-US",
+   "dateModified": "2026-11-07",
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://cryptorenegades.github.io/crypto-risk-tools/assets/img/og-risk-reward.png",
+    "width": 1200,
+    "height": 630
+   },
+   "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Crypto Risk Tools",
+      "item": "https://cryptorenegades.github.io/crypto-risk-tools/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Risk Reward Ratio Calculator",
+      "item": "https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html"
+     }
+    ]
+   },
+   "mainEntity": {
+    "@id": "https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html#app"
+   }
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html#app",
+   "name": "Risk Reward Ratio Calculator",
+   "url": "https://cryptorenegades.github.io/crypto-risk-tools/risk-reward-ratio-calculator.html",
+   "description": "Risk reward ratio calculator for crypto trades. Enter entry, stop and target to get the R:R ratio and the break-even win rate it implies, plus a table.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   },
+   "creator": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./"><svg class="brand-mark" width="32" height="32" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><defs><linearGradient id="hm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#52b438"/><stop offset="1" stop-color="#3b8a27"/></linearGradient></defs><rect width="128" height="128" rx="28" fill="url(#hm)"/><rect x="30" y="34" width="68" height="11" rx="5.5" fill="#fff"/><rect x="30" y="83" width="68" height="11" rx="5.5" fill="#fff" fill-opacity=".7"/><path d="M64 50 L74 61 H67.5 V67 H74 L64 78 L54 67 H60.5 V61 H54 Z" fill="#fff"/></svg><span><b>Crypto Risk Tools</b><small>by Crypto Renegades</small></span></a>
+    <nav aria-label="Tools" class="nav-desk">
+      <ul class="nav-list"><li><a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>Position size</a></li><li><a href="./drawdown-recovery-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5l6 6 4-4 8 9"/><path d="M15 16h6v-6"/></svg>Drawdown recovery</a></li><li><a href="./risk-per-trade-table.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M3 15h18M9 4v16"/></svg>Risk per trade</a></li><li><a href="./risk-reward-ratio-calculator.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M5 21h14"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></svg>Risk reward</a></li></ul>
+    </nav>
+    <nav aria-label="Tools" class="nav-mob">
+      <details class="menu">
+        <summary>Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <ul class="nav-list"><li><a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>Position size</a></li><li><a href="./drawdown-recovery-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5l6 6 4-4 8 9"/><path d="M15 16h6v-6"/></svg>Drawdown recovery</a></li><li><a href="./risk-per-trade-table.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M3 15h18M9 4v16"/></svg>Risk per trade</a></li><li><a href="./risk-reward-ratio-calculator.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M5 21h14"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></svg>Risk reward</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Free calculator. No sign-up. Runs in your browser.</p>
+      <h1>Risk Reward Ratio Calculator</h1>
+      <p class="lede">Enter your entry, stop and target to get the risk reward ratio. The calculator also shows the break-even win rate that ratio implies. That figure is plain arithmetic about the structure of the trade, not a prediction of how it will go.</p>
+
+      <div class="tool">
+        <form class="card" id="calc" data-tool="rr" novalidate aria-label="Risk reward ratio calculator">
+          <div class="form-head">
+            <h2>Your trade plan</h2>
+            <button type="button" class="btn btn-link" id="reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 3.5v4.5H8"/></svg>Reset example</button>
+          </div>
+          <fieldset class="segmented">
+            <legend>Direction</legend>
+            <div class="seg"><label><input type="radio" name="side" value="long" checked><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Long</span></label><label><input type="radio" name="side" value="short"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Short</span></label></div>
+          </fieldset>
+          <div class="fields">
+            <div class="field full">
+              <label for="entry">Entry price</label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="entry" name="entry" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="100" aria-describedby="entry-error"></div>
+              
+              <p class="error" id="entry-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="stop">Stop price</label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="stop" name="stop" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="95" aria-describedby="stop-error"></div>
+              
+              <p class="error" id="stop-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="target">Target price</label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="target" name="target" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="110" aria-describedby="target-error"></div>
+              
+              <p class="error" id="target-error" hidden></p>
+            </div>
+            <div class="field full">
+              <label for="riskAmount">Amount at risk <span class="opt">(optional)</span></label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="riskAmount" name="riskAmount" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="500" aria-describedby="riskAmount-help riskAmount-error"></div>
+              <p class="help" id="riskAmount-help">Adds the dollar amounts. Get it from the risk per trade table.</p>
+              <p class="error" id="riskAmount-error" hidden></p>
+            </div>
+          </div>
+          <div class="form-foot">
+            <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Runs in your browser. Nothing you enter is stored or sent.</p>
+          </div>
+        </form>
+
+        <section class="panel" aria-labelledby="res-h">
+          <h2 class="sr-only" id="res-h">Results</h2>
+          <p class="label">Risk reward ratio</p>
+          <p class="big" id="rr-ratio">1 : 2</p>
+          <p class="big-sub" id="rr-sub">The target is 2 times as far from the entry as the stop (2R).</p>
+          <div class="map" aria-hidden="true">
+            <div class="map-bar"><span class="r" id="rr-bar-r" style="width:33.33%"></span><span class="w" id="rr-bar-w" style="width:66.67%"></span></div>
+            <div class="map-legend"><span>Stop <b id="rr-l-stop">$95.00</b></span><span>Entry <b id="rr-l-entry">$100.00</b></span><span>Target <b id="rr-l-target">$110.00</b></span></div>
+          </div>
+          <dl class="stats">
+            <div><dt>Win rate needed to break even</dt><dd id="rr-be">33.3%</dd><dd><small id="rr-be-sub">1 ÷ (1 + 2), before fees</small></dd></div>
+            <div><dt>Amount at risk to reward</dt><dd id="rr-dollars">$500 to $1,000</dd><dd><small id="rr-dollars-sub">risked at the stop, planned at the target</small></dd></div>
+            <div><dt>Risk per unit</dt><dd id="rr-risk">$5.00</dd><dd><small id="rr-risk-sub">5.00% of the entry</small></dd></div>
+            <div><dt>Reward per unit</dt><dd id="rr-rew">$10.00</dd><dd><small id="rr-rew-sub">10.00% of the entry</small></dd></div>
+          </dl>
+          <p class="alert ok" id="rr-note-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.01"/></svg><span id="rr-note">Arithmetic, not a forecast: if every trade is set up at 1 : 2, the account breaks even when 33.3% of trades reach the target and the rest reach the stop, before fees and slippage.</span></p>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" id="copy-results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8.5" y="8.5" width="12" height="12" rx="2.5"/><path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5"/></svg>Copy results</button>
+            <button type="button" class="btn btn-ghost" id="copy-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg>Copy link</button>
+            <span class="copied" id="copy-status" role="status"></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <div class="wrap prose-wrap">
+      <section class="section" aria-labelledby="table-h">
+        <div class="table-card">
+          <header>
+            <h2 id="table-h">Break-even win rate by risk reward ratio</h2>
+            <p>The share of trades that must reach the target, with the rest reaching the stop, for the account to break even before fees.</p>
+          </header>
+          <table class="data">
+            <caption class="sr-only">Break-even win rate for risk reward ratios from 1 : 0.5 to 1 : 5</caption>
+            <thead><tr><th scope="col">Risk : reward</th><th scope="col">Break-even win rate</th><th scope="col">One win at target covers</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1 : 0.5</th><td>66.7%</td><td>Half a loss</td></tr>
+              <tr><th scope="row">1 : 1</th><td>50.0%</td><td>1 loss</td></tr>
+              <tr><th scope="row">1 : 1.5</th><td>40.0%</td><td>1.5 losses</td></tr>
+              <tr><th scope="row">1 : 2</th><td>33.3%</td><td>2 losses</td></tr>
+              <tr><th scope="row">1 : 2.5</th><td>28.6%</td><td>2.5 losses</td></tr>
+              <tr class="hl"><th scope="row">1 : 3</th><td>25.0%</td><td>3 losses</td></tr>
+              <tr><th scope="row">1 : 4</th><td>20.0%</td><td>4 losses</td></tr>
+              <tr><th scope="row">1 : 5</th><td>16.7%</td><td>5 losses</td></tr>
+            </tbody>
+          </table>
+          <footer>Break-even win rate = 1 ÷ (1 + R). Arithmetic about the trade's structure, not a statement about anyone's results.</footer>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="use-h">
+        <h2 id="use-h">How to use the calculator</h2>
+        <ol>
+          <li><b>Pick the direction</b>, then enter the entry, the stop where the idea fails, and the target where you plan to take the position off.</li>
+          <li><b>Read the ratio.</b> 1 : 2 means the target is twice as far from the entry as the stop.</li>
+          <li><b>Add your amount at risk</b> (optional) to see the plan in dollars.</li>
+          <li><b>Use it as a filter.</b> Decide the minimum ratio you accept before the trade, and pass on setups that do not meet it.</li>
+        </ol>
+      </section>
+      <section class="section" aria-labelledby="formula-h">
+        <h2 id="formula-h">How the risk reward formula works</h2>
+        <ol class="formula">
+          <li><b>R</b> = (target - entry) ÷ (entry - stop) for a long</li>
+          <li><b>R</b> = (entry - target) ÷ (stop - entry) for a short</li>
+          <li><b>Break-even win rate</b> = 1 ÷ (1 + R)</li>
+        </ol>
+        <p>Why that last line holds: if every trade risks 1 unit to make R units, and a share p of trades reach the target, the result per trade is p × R - (1 - p) × 1. Set that to zero and solve: p = 1 ÷ (1 + R). It describes the plan. It does not say how likely the target is.</p>
+      </section>
+      <section class="section" aria-labelledby="ex-h">
+        <h2 id="ex-h">Worked example</h2>
+        <div class="example">
+          <div class="example-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg>Long at $100, stop $95, target $110, $500 at risk</div>
+          <ol><li>Risk per unit: 100 - 95 = <b>$5</b>. Reward per unit: 110 - 100 = <b>$10</b>.</li><li>R = 10 ÷ 5 = <b>2</b>, so the ratio is <b>1 : 2</b>.</li><li>Break-even win rate: 1 ÷ (1 + 2) = <b>33.3%</b>.</li><li>With $500 at risk, the stop costs $500 and the target adds $1,000. Over nine trades like this with three at the target and six at the stop: 3 × 1,000 - 6 × 500 = <b>$0</b>, before fees.</li></ol>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="not-h">
+        <h2 id="not-h">What the ratio does not tell you</h2>
+        <p>The ratio says nothing about how likely the target is. A distant target improves the ratio on paper, but price has further to travel to reach it. A tight stop improves it too, but normal movement reaches a tight stop more often. Treat the ratio as a planning filter, not a forecast, and remember that fees and slippage push the real break-even slightly higher.</p>
+      </section>
+      <section class="section" aria-labelledby="mis-h">
+        <h2 id="mis-h">Common mistakes</h2>
+        <ul class="mistakes"><li><b>Moving the target to make the ratio work.</b>The target should come from the chart, a level where you expect price to react, not from the ratio you want to see.</li><li><b>Tightening the stop to improve the ratio.</b>A stop closer than the idea needs gets hit by ordinary movement. Size the position down instead.</li><li><b>Ignoring fees on small moves.</b>When the reward is only a fraction of a percent, fees can take a large share of it and raise the real break-even.</li><li><b>Reading the break-even win rate as a promise.</b>It is arithmetic for planning. It says nothing about your results, or anyone else's.</li></ul>
+      </section>
+      <aside class="callout" aria-label="Further reading on Crypto Renegades">
+        <div>
+          <h2>The 1:3 risk reward filter</h2>
+          <p>Read how Crypto Renegades calculates the ratio and uses it as a filter before a trade is taken.</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.cryptorenegades.co/blog/risk-reward-filter/">Read the risk reward guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </aside>
+    </div>
+    <div class="wrap toolkit-wrap">
+      <section class="section no-print" aria-labelledby="toolkit-h">
+        <h2 id="toolkit-h">The risk toolkit</h2>
+        <p>Four tools that share the same math and the same rule: decide the loss first.</p>
+        <ul class="toolkit">
+          <li><a href="./"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg></span><b>Crypto Position Size Calculator</b><span class="d">Position size, margin and estimated liquidation from your stop and leverage.</span></a></li>
+          <li><a href="./drawdown-recovery-calculator.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5l6 6 4-4 8 9"/><path d="M15 16h6v-6"/></svg></span><b>Drawdown Recovery Calculator</b><span class="d">The gain needed to get back to even after a loss, with a 5% to 90% table.</span></a></li>
+          <li><a href="./risk-per-trade-table.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M3 15h18M9 4v16"/></svg></span><b>Crypto Risk Per Trade Table</b><span class="d">Dollars at risk at 0.5% to 2% for $1,000 to $250,000 accounts.</span></a></li>
+          <li><a href="./risk-reward-ratio-calculator.html" aria-current="page"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M5 21h14"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></svg></span><b>Risk Reward Ratio Calculator</b><span class="d">R:R from entry, stop and target, and the break-even win rate it implies.</span><span class="here">You are here</span></a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="disclaimer">Built by <a href="https://www.cryptorenegades.co/">Crypto Renegades</a>. Education only. Not financial advice.</p>
+      <p>Crypto Renegades LLC was founded by Chad Wittfeldt and Niko Mercuris. These tools teach position sizing and risk management; they do not tell you what to buy or sell.</p>
+      <p>Everything runs in your browser. No accounts, no cookies, no tracking. Updated November 7, 2026.</p>
+    </div>
+    <nav aria-label="All tools">
+      <ul class="foot-links"><li><a href="./">Crypto Position Size Calculator</a></li><li><a href="./drawdown-recovery-calculator.html">Drawdown Recovery Calculator</a></li><li><a href="./risk-per-trade-table.html">Crypto Risk Per Trade Table</a></li><li><a href="./risk-reward-ratio-calculator.html">Risk Reward Ratio Calculator</a></li></ul>
+    </nav>
+  </div>
+</footer>
+<p id="live" class="sr-only" aria-live="polite"></p>
+<script src="assets/js/calc.js?v=2"></script>
+<script src="assets/js/views.js?v=2"></script>
+<script src="assets/js/app.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crypto Position Size Calculator with Leverage and Liquidation</title>
+<meta name="description" content="Crypto position size calculator, free. Enter account size, risk per trade, entry, stop and leverage to get position size, margin and a liquidation estimate.">
+<link rel="canonical" href="https://cryptorenegades.github.io/crypto-risk-tools/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Crypto Renegades">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Crypto Risk Tools by Crypto Renegades">
+<meta property="og:title" content="Crypto Position Size Calculator with Leverage and Liquidation">
+<meta property="og:description" content="Crypto position size calculator, free. Enter account size, risk per trade, entry, stop and leverage to get position size, margin and a liquidation estimate.">
+<meta property="og:url" content="https://cryptorenegades.github.io/crypto-risk-tools/">
+<meta property="og:image" content="https://cryptorenegades.github.io/crypto-risk-tools/assets/img/og-position-size.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Crypto Position Size Calculator">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crypto Position Size Calculator with Leverage and Liquidation">
+<meta name="twitter:description" content="Crypto position size calculator, free. Enter account size, risk per trade, entry, stop and leverage to get position size, margin and a liquidation estimate.">
+<meta name="twitter:image" content="https://cryptorenegades.github.io/crypto-risk-tools/assets/img/og-position-size.png">
+<meta name="theme-color" content="#f5f7f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090e09" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "EducationalOrganization",
+   "@id": "https://www.cryptorenegades.co/#organization",
+   "name": "Crypto Renegades",
+   "legalName": "Crypto Renegades LLC",
+   "url": "https://www.cryptorenegades.co/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.cryptorenegades.co/brand/icon-512.png",
+    "width": 512,
+    "height": 512
+   },
+   "founder": [
+    {
+     "@type": "Person",
+     "@id": "https://www.cryptorenegades.co/founders/chad-wittfeldt/#person",
+     "name": "Chad Wittfeldt"
+    },
+    {
+     "@type": "Person",
+     "@id": "https://www.cryptorenegades.co/founders/niko-mercuris/#person",
+     "name": "Niko Mercuris"
+    }
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#website",
+   "name": "Crypto Risk Tools",
+   "url": "https://cryptorenegades.github.io/crypto-risk-tools/",
+   "inLanguage": "en-US",
+   "publisher": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#webpage",
+   "url": "https://cryptorenegades.github.io/crypto-risk-tools/",
+   "name": "Crypto Position Size Calculator with Leverage and Liquidation",
+   "description": "Crypto position size calculator, free. Enter account size, risk per trade, entry, stop and leverage to get position size, margin and a liquidation estimate.",
+   "isPartOf": {
+    "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#website"
+   },
+   "publisher": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   },
+   "inLanguage": "en-US",
+   "dateModified": "2026-11-07",
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://cryptorenegades.github.io/crypto-risk-tools/assets/img/og-position-size.png",
+    "width": 1200,
+    "height": 630
+   },
+   "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Crypto Risk Tools",
+      "item": "https://cryptorenegades.github.io/crypto-risk-tools/"
+     }
+    ]
+   },
+   "mainEntity": {
+    "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#app"
+   }
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://cryptorenegades.github.io/crypto-risk-tools/#app",
+   "name": "Crypto Position Size Calculator",
+   "url": "https://cryptorenegades.github.io/crypto-risk-tools/",
+   "description": "Crypto position size calculator, free. Enter account size, risk per trade, entry, stop and leverage to get position size, margin and a liquidation estimate.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   },
+   "creator": {
+    "@id": "https://www.cryptorenegades.co/#organization"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./"><svg class="brand-mark" width="32" height="32" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><defs><linearGradient id="hm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#52b438"/><stop offset="1" stop-color="#3b8a27"/></linearGradient></defs><rect width="128" height="128" rx="28" fill="url(#hm)"/><rect x="30" y="34" width="68" height="11" rx="5.5" fill="#fff"/><rect x="30" y="83" width="68" height="11" rx="5.5" fill="#fff" fill-opacity=".7"/><path d="M64 50 L74 61 H67.5 V67 H74 L64 78 L54 67 H60.5 V61 H54 Z" fill="#fff"/></svg><span><b>Crypto Risk Tools</b><small>by Crypto Renegades</small></span></a>
+    <nav aria-label="Tools" class="nav-desk">
+      <ul class="nav-list"><li><a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>Position size</a></li><li><a href="./drawdown-recovery-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5l6 6 4-4 8 9"/><path d="M15 16h6v-6"/></svg>Drawdown recovery</a></li><li><a href="./risk-per-trade-table.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M3 15h18M9 4v16"/></svg>Risk per trade</a></li><li><a href="./risk-reward-ratio-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M5 21h14"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></svg>Risk reward</a></li></ul>
+    </nav>
+    <nav aria-label="Tools" class="nav-mob">
+      <details class="menu">
+        <summary>Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <ul class="nav-list"><li><a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>Position size</a></li><li><a href="./drawdown-recovery-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5l6 6 4-4 8 9"/><path d="M15 16h6v-6"/></svg>Drawdown recovery</a></li><li><a href="./risk-per-trade-table.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M3 15h18M9 4v16"/></svg>Risk per trade</a></li><li><a href="./risk-reward-ratio-calculator.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M5 21h14"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></svg>Risk reward</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Free calculator. No sign-up. Runs in your browser.</p>
+      <h1>Crypto Position Size Calculator</h1>
+      <p class="lede">Enter your account size, the share of it you accept losing on this trade, your entry and your stop. The calculator sizes the position from the stop, then shows the margin and an estimated liquidation price for the leverage you plan to use.</p>
+
+      <div class="tool">
+        <form class="card" id="calc" data-tool="position" novalidate aria-label="Position size calculator">
+          <div class="form-head">
+            <h2>Your trade</h2>
+            <button type="button" class="btn btn-link" id="reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 3.5v4.5H8"/></svg>Reset example</button>
+          </div>
+          <fieldset class="segmented">
+            <legend>Direction</legend>
+            <div class="seg"><label><input type="radio" name="side" value="long" checked><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Long</span></label><label><input type="radio" name="side" value="short"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Short</span></label></div>
+          </fieldset>
+          <div class="fields">
+            <div class="field">
+              <label for="account">Account size</label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="account" name="account" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="50,000" aria-describedby="account-error"></div>
+              
+              <p class="error" id="account-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="riskPct">Risk per trade</label>
+              <div class="input has-suf"><input id="riskPct" name="riskPct" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="1" aria-describedby="riskPct-help riskPct-error"><span class="affix suf" aria-hidden="true">%</span></div>
+              <p class="help" id="riskPct-help">Many disciplined traders use 0.5% to 2%.</p>
+              <p class="error" id="riskPct-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="entry">Entry price</label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="entry" name="entry" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="60,000" aria-describedby="entry-error"></div>
+              
+              <p class="error" id="entry-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="stop">Stop price</label>
+              <div class="input has-pre"><span class="affix pre" aria-hidden="true">$</span><input id="stop" name="stop" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="57,000" aria-describedby="stop-help stop-error"></div>
+              <p class="help" id="stop-help">Where your trade idea is proven wrong.</p>
+              <p class="error" id="stop-error" hidden></p>
+            </div>
+            <div class="field full">
+              <label for="leverage">Leverage</label>
+              <div class="input has-suf"><input id="leverage" name="leverage" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="5" aria-describedby="leverage-help leverage-error"><span class="affix suf" aria-hidden="true">x</span></div>
+              <p class="help" id="leverage-help">Use 1 for spot. Leverage changes the margin you post, not the dollars at risk.</p>
+              <p class="error" id="leverage-error" hidden></p>
+            </div>
+          </div>
+          <div class="form-foot">
+            <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Runs in your browser. Nothing you enter is stored or sent.</p>
+          </div>
+        </form>
+
+        <section class="panel" aria-labelledby="res-h">
+          <h2 class="sr-only" id="res-h">Results</h2>
+          <p class="label">Position size</p>
+          <p class="big" id="p-notional">$10,000</p>
+          <p class="big-sub" id="p-units">0.1667 units at $60,000.00</p>
+          <dl class="stats">
+            <div><dt>Amount at risk</dt><dd id="p-risk">$500.00</dd></div>
+            <div><dt>Stop distance</dt><dd id="p-stop">5.00%</dd></div>
+            <div><dt id="p-margin-label">Margin at 5x</dt><dd id="p-margin">$2,000.00</dd></div>
+            <div><dt>Exposure vs account</dt><dd id="p-exposure">20.00%</dd></div>
+            <div class="wide"><dt>Estimated liquidation price</dt><dd id="p-liq">$48,000.00</dd><dd><small id="p-liq-sub">20.00% away, before fees and maintenance margin</small></dd></div>
+          </dl>
+          <p class="alert danger" id="a-wrong" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 3.9 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2v.01"/></svg><span id="a-wrong-text">For a long position the stop must be below the entry price.</span></p>
+          <p class="alert warn" id="a-invalid" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.01"/></svg><span>Check the highlighted fields to see the position size.</span></p>
+          <p class="alert danger" id="a-beyond" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 3.9 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2v.01"/></svg><span>Your stop is beyond the estimated liquidation price. The platform would close this position before your plan does. Lower the leverage or tighten the stop.</span></p>
+          <p class="alert warn" id="a-tight" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 3.9 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2v.01"/></svg><span>Liquidation sits very close to your stop. Slippage in a fast market could reach it. Consider lower leverage.</span></p>
+          <p class="alert warn" id="a-margin" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 3.9 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2v.01"/></svg><span>The margin required is larger than the account. This stop is too close for the risk you chose at this leverage.</span></p>
+          <p class="alert ok" id="a-clear"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg><span>Your stop closes the position well before the estimated liquidation price.</span></p>
+          <div class="panel-section">
+            <p class="label">Price at each R multiple (R is the amount at risk)</p>
+            <ul class="targets">
+              <li><p class="m">1R</p><p class="p" id="p-t1">$63,000.00</p><p class="g" id="p-g1">+$500 if reached</p></li>
+              <li><p class="m">2R</p><p class="p" id="p-t2">$66,000.00</p><p class="g" id="p-g2">+$1,000 if reached</p></li>
+              <li><p class="m">3R</p><p class="p" id="p-t3">$69,000.00</p><p class="g" id="p-g3">+$1,500 if reached</p></li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" id="copy-results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8.5" y="8.5" width="12" height="12" rx="2.5"/><path d="M15.5 8.5V6a2.5 2.5 0 0 0-2.5-2.5H6A2.5 2.5 0 0 0 3.5 6v7A2.5 2.5 0 0 0 6 15.5h2.5"/></svg>Copy results</button>
+            <button type="button" class="btn btn-ghost" id="copy-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg>Copy link</button>
+            <span class="copied" id="copy-status" role="status"></span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <div class="wrap prose-wrap">
+      <section class="section" aria-labelledby="use-h">
+        <h2 id="use-h">How to use the calculator</h2>
+        <ol>
+          <li><b>Choose your risk per trade first</b>, before you look at the chart, and keep it fixed. Many disciplined traders use 0.5% to 2% of the account.</li>
+          <li><b>Set the stop where the trade idea is proven wrong</b>, not where the loss feels comfortable.</li>
+          <li><b>Read the position size.</b> That is the position value to enter. The line under it shows how many units (coins) that buys at your entry.</li>
+          <li><b>If you use leverage, check the liquidation estimate.</b> Your stop must sit well before it. The calculator warns you when it does not.</li>
+        </ol>
+      </section>
+      <section class="section" aria-labelledby="formula-h">
+        <h2 id="formula-h">How the position size formula works</h2>
+        <p>Position sizing starts from the loss, not the profit. You decide the dollars you accept losing if the trade is wrong, find the price where the idea fails, and let the distance between entry and stop decide how large the position can be.</p>
+        <ol class="formula">
+          <li><b>Amount at risk</b> = account size × risk per trade %</li>
+          <li><b>Units</b> = amount at risk ÷ (entry - stop) for a long, ÷ (stop - entry) for a short</li>
+          <li><b>Position size</b> = units × entry</li>
+          <li><b>Margin</b> = position size ÷ leverage</li>
+          <li><b>Estimated liquidation</b> = entry × (1 - 1 ÷ leverage) for a long, entry × (1 + 1 ÷ leverage) for a short</li>
+        </ol>
+        <p>Leverage only appears in the last two lines. It changes the margin you post and how close the liquidation price sits to your entry. It does not change the units or the dollars lost at the stop, as long as the stop fills before liquidation.</p>
+      </section>
+      <section class="section" aria-labelledby="ex-h">
+        <h2 id="ex-h">Worked example</h2>
+        <p>These are the numbers loaded in the calculator above.</p>
+        <div class="example">
+          <div class="example-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg>Long, $50,000 account, 1% risk, 5x leverage</div>
+          <ol><li>Amount at risk: 50,000 × 1% = <b>$500</b>.</li><li>Entry $60,000, stop $57,000: <b>$3,000 per unit</b>, which is 5.00% below the entry.</li><li>Units: 500 ÷ 3,000 = <b>0.1667</b>. Position size: 0.1667 × 60,000 = <b>$10,000</b>, or 20% of the account.</li><li>Margin at 5x: 10,000 ÷ 5 = <b>$2,000</b>.</li><li>Estimated liquidation: 60,000 × (1 - 1 ÷ 5) = <b>$48,000</b>, 20% below the entry. The stop at $57,000 closes the position long before that.</li><li>If the stop fills, the loss is 0.1667 × 3,000 = <b>$500</b> plus fees and any slippage, at 1x or at 10x.</li></ol>
+        </div>
+        <p><b>Short version.</b> A $10,000 account at 2% risks $200. Entry $2,000 with a stop at $2,100 is $100 per unit, so the position is 2 units, worth $4,000. Switch the calculator to Short to check it.</p>
+      </section>
+      <section class="section" aria-labelledby="liq-h">
+        <h2 id="liq-h">The liquidation estimate and its limits</h2>
+        <p>The estimate uses the common approximation entry × (1 - 1 ÷ leverage) for a long and entry × (1 + 1 ÷ leverage) for a short. Real platforms add maintenance margin and fees, so the real liquidation level arrives a little sooner than this figure. Always check the liquidation price your platform shows before you enter.</p>
+        <p>The calculator raises three flags:</p>
+        <ul>
+          <li><b>Stop beyond liquidation.</b> The platform would close the position before your stop does, so the loss is no longer the one you planned.</li>
+          <li><b>Liquidation within 1.5 percentage points of the stop.</b> A fast market can skip past a stop. Little room between the two means slippage could reach liquidation.</li>
+          <li><b>Margin larger than the account.</b> The stop is too close for the risk you chose at this leverage. Widen the stop and the position shrinks.</li>
+        </ul>
+      </section>
+      <section class="section" aria-labelledby="mis-h">
+        <h2 id="mis-h">Common position sizing mistakes</h2>
+        <ul class="mistakes"><li><b>Choosing leverage first.</b>Picking 20x and then looking for a stop gets the order backwards. Size from the stop; leverage only decides the margin.</li><li><b>Moving the stop to fit a bigger position.</b>The stop belongs where the idea fails. If the position that fits is too small to be worth it, the trade is the problem, not the stop.</li><li><b>Typing the margin into the size box.</b>Many order forms ask for the position size or the units, not the margin. At 5x, entering $2,000 when the plan says $10,000 makes the position five times too small, and the reverse mistake makes it five times too big.</li><li><b>Raising risk after a loss.</b>Bigger positions to win it back turn a normal losing streak into a deep drawdown. See how fast that compounds in the <a href="./drawdown-recovery-calculator.html">drawdown recovery calculator</a>.</li><li><b>Forgetting fees and slippage.</b>A stop is an order to exit, not a fixed exit price. Real losses run slightly above the planned amount, so many traders round the position size down.</li></ul>
+      </section>
+      <aside class="callout" aria-label="Further reading on Crypto Renegades">
+        <div>
+          <h2>Position sizing inside a full process</h2>
+          <p>This calculator matches the position size calculator on Crypto Renegades, where the same math sits next to a walkthrough of stops, leverage and liquidation.</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.cryptorenegades.co/tools/position-size-calculator/">Open the Crypto Renegades calculator<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </aside>
+    </div>
+    <div class="wrap toolkit-wrap">
+      <section class="section no-print" aria-labelledby="toolkit-h">
+        <h2 id="toolkit-h">The risk toolkit</h2>
+        <p>Four tools that share the same math and the same rule: decide the loss first.</p>
+        <ul class="toolkit">
+          <li><a href="./" aria-current="page"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg></span><b>Crypto Position Size Calculator</b><span class="d">Position size, margin and estimated liquidation from your stop and leverage.</span><span class="here">You are here</span></a></li>
+          <li><a href="./drawdown-recovery-calculator.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5l6 6 4-4 8 9"/><path d="M15 16h6v-6"/></svg></span><b>Drawdown Recovery Calculator</b><span class="d">The gain needed to get back to even after a loss, with a 5% to 90% table.</span></a></li>
+          <li><a href="./risk-per-trade-table.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M3 15h18M9 4v16"/></svg></span><b>Crypto Risk Per Trade Table</b><span class="d">Dollars at risk at 0.5% to 2% for $1,000 to $250,000 accounts.</span></a></li>
+          <li><a href="./risk-reward-ratio-calculator.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M5 21h14"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.2 3.2 0 0 0 6 0z"/><path d="M19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></svg></span><b>Risk Reward Ratio Calculator</b><span class="d">R:R from entry, stop and target, and the break-even win rate it implies.</span></a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="disclaimer">Built by <a href="https://www.cryptorenegades.co/">Crypto Renegades</a>. Education only. Not financial advice.</p>
+      <p>Crypto Renegades LLC was founded by Chad Wittfeldt and Niko Mercuris. These tools teach position sizing and risk management; they do not tell you what to buy or sell.</p>
+      <p>Everything runs in your browser. No accounts, no cookies, no tracking. Updated November 7, 2026.</p>
+    </div>
+    <nav aria-label="All tools">
+      <ul class="foot-links"><li><a href="./">Crypto Position Size Calculator</a></li><li><a href="./drawdown-recovery-calculator.html">Drawdown Recovery Calculator</a></li><li><a href="./risk-per-trade-table.html">Crypto Risk Per Trade Table</a></li><li><a href="./risk-reward-ratio-calculator.html">Risk Reward Ratio Calculator</a></li></ul>
+    </nav>
+  </div>
+</footer>
+<p id="live" class="sr-only" aria-live="polite"></p>
+<script src="assets/js/calc.js?v=2"></script>
+<script src="assets/js/views.js?v=2"></script>
+<script src="assets/js/app.js?v=2"></script>
+</body>
+</html>
