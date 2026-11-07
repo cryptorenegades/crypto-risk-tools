@@ -22,11 +22,11 @@ risk-reward-ratio-calculator.html   Risk reward ratio calculator and break-even 
 sitemap.xml                         List of the four pages for search engines
 robots.txt                          Tells search engines where the sitemap is
 .nojekyll                           Tells GitHub Pages to serve the files as they are
-assets/css/site.css                 All styles (light and dark mode, print styles)
-assets/js/calc.js                   All the math, in one tested file
-assets/js/views.js                  What each tool shows for a given input
-assets/js/app.js                    Connects the forms to the math
-assets/img/                         Icons and the four social sharing images
+site.css                 All styles (light and dark mode, print styles)
+calc.js                   All the math, in one tested file
+views.js                  What each tool shows for a given input
+app.js                    Connects the forms to the math
+                         Icons and the four social sharing images
 README.md                           This file
 ```
 
